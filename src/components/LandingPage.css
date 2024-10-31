@@ -1,0 +1,97 @@
+.section {
+    display: flex;
+    flex-direction: row; /* Align images and text side by side */
+    justify-content: space-around; /* Space between sections */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */  }
+  
+  .menu1{
+    justify-content: flex-end;
+    align-items: start;
+    padding-top: 2%;
+    
+  }
+
+ /* Adjust the navbar width */
+.navbar {
+  width: 80%; /* or 100% for full viewport width */
+  margin: 0 auto; /* Center the navbar */
+}
+
+/* Increase the navbar height if needed */
+.navbar .navbar-nav {
+  height: 100px; /* Adjust the height as desired */
+  align-items: center; /* Center items vertically */
+}
+
+/* Optional: Increase spacing between nav items */
+.navbar .nav-link {
+  margin-right: 20px;
+  font-size: 1.2em; /* Adjust font size for better readability */
+}
+
+.x-head {
+  width: 100vw; /* Full viewport width */
+  padding: 10px 0;
+}
+
+.myLogo{
+  width: 150px;
+}
+
+.navbar-collapse{
+  justify-content: end;
+}
+
+.head-pargraph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+  .slide {
+    flex: 1; /* Take equal space for both image and text */
+    padding: 20px; /* Add some padding */
+  }
+  
+  .slide img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .paragraph-section {
+    background-color: rgb(20, 128, 167); /* RGB background */
+    color: white; /* White text */
+    padding: 20px; /* Padding for the text area */
+    border-radius: 10px; /* Optional: round corners */
+    display: flex;
+    flex-direction: column; /* Stack title and paragraph vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align text to the start */
+  }
+  
+  .white-section{
+    height: 50%; /* Takes the other half */
+    width: 100%; /* Full width */
+    background-color: white; /* White background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Black text for contrast */
+
+  
+  }
+  .blue-section{
+    height: 50vh; /* Takes half of the section's height */
+    width: 100vw; /* Full width */
+    background-color: rgb(20, 128, 167); /* Blue background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* White text for contrast */
+    flex-direction: column;
+    text-align: center;
+  }
