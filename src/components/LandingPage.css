@@ -1,97 +1,117 @@
-.section {
-    display: flex;
-    flex-direction: row; /* Align images and text side by side */
-    justify-content: space-around; /* Space between sections */
-    align-items: center; /* Center content vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */  }
-  
-  .menu1{
-    justify-content: flex-end;
-    align-items: start;
-    padding-top: 2%;
-    
-  }
+/* General Styling */
+body, .section {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  color: #333;
+}
 
- /* Adjust the navbar width */
+/* Navbar Styling */
 .navbar {
-  width: 80%; /* or 100% for full viewport width */
-  margin: 0 auto; /* Center the navbar */
-}
-
-/* Increase the navbar height if needed */
-.navbar .navbar-nav {
-  height: 100px; /* Adjust the height as desired */
-  align-items: center; /* Center items vertically */
-}
-
-/* Optional: Increase spacing between nav items */
-.navbar .nav-link {
-  margin-right: 20px;
-  font-size: 1.2em; /* Adjust font size for better readability */
-}
-
-.x-head {
-  width: 100vw; /* Full viewport width */
-  padding: 10px 0;
-}
-
-.myLogo{
-  width: 150px;
-}
-
-.navbar-collapse{
-  justify-content: end;
-}
-
-.head-pargraph{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-  .slide {
-    flex: 1; /* Take equal space for both image and text */
-    padding: 20px; /* Add some padding */
-  }
-  
-  .slide img {
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  .paragraph-section {
-    background-color: rgb(20, 128, 167); /* RGB background */
-    color: white; /* White text */
-    padding: 20px; /* Padding for the text area */
-    border-radius: 10px; /* Optional: round corners */
-    display: flex;
-    flex-direction: column; /* Stack title and paragraph vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: flex-start; /* Align text to the start */
-  }
-  
-  .white-section{
-    height: 50%; /* Takes the other half */
-    width: 100%; /* Full width */
-    background-color: white; /* White background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black; /* Black text for contrast */
+  justify-content: space-between;
+  padding: 1rem 5%;
+  flex-direction: row; /* Align items horizontally */
 
-  
-  }
-  .blue-section{
-    height: 50vh; /* Takes half of the section's height */
-    width: 100vw; /* Full width */
-    background-color: rgb(20, 128, 167); /* Blue background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white; /* White text for contrast */
-    flex-direction: column;
-    text-align: center;
-  }
+}
+
+.navbar-brand img {
+  width: 120px;
+}
+
+.navbar-links .nav-link {
+  margin-right: 20px;
+  font-size: 1.1em;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-links .nav-link:hover {
+  color: #007ACC;
+}
+
+/* Header Content */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.header-content .frameimg {
+  width: 300px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+/* Features Section */
+.section.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  background: linear-gradient(90deg, rgba(19,121,158,1) 16%, rgba(0,13,71,1) 100%);
+  color: #fff;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+.feature-image {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+/* Warranty Section */
+.warranty-section {
+  background-color: #f3f3f3;
+  color: #007ACC;
+  padding: 5%;
+  text-align: center;
+}
+
+.warranty-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #212121;
+  color: #fff;
+  padding: 5%;
+}
+
+.contact-info {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  font-size: 1.2em;
+  margin-bottom: 0.5rem;
+}
