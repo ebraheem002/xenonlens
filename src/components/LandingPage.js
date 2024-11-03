@@ -85,9 +85,8 @@ const LandingPage = () => {
                 <div className="contact-info">
                   <h3>للتواصل عبر البريد الالكتروني</h3>
                   <ul>
-                    <li>info@example.com</li>
-                    <li>support@example.com</li>
-                    <li>contact@example.com</li>
+                    <li>sales@xenonlens.com</li>
+                    
                   </ul>
                 </div>
               </div>
