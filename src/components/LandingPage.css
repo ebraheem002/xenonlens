@@ -1,359 +1,443 @@
+/* Global Styles */
 body {
   font-family: "Noto Kufi Arabic", sans-serif;
-  scroll-behavior: smooth; /* Enable smooth scrolling between sections */
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #101010; /* Overall dark background for the page */
 }
 
-/* Keyframes for animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px); /* Start from above */
+html{
+  scroll-behavior: smooth;
+
+}
+
+h2, h4 {
+  font-weight: bold;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('./xenon-cover-1.jpg') no-repeat center center/cover;
+  background-color: #1a1a1a; /* Dark background for hero */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-overlay p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 10px 30px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: 1px solid white;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background-color: #0f4f67;
+  color: white;
+}
+
+/* Features Section */
+.features {
+  background-color: #1e2a30; /* A dark shade of blue-gray */
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+}
+
+.features-heading {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.check-icon {
+  color: #28a745;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Warranty Section */
+.warranty {
+  background-color: #232a34; /* Dark slate gray */
+  padding: 50px 20px;
+  color: white;
+}
+.warranty-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.warranty-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.warranty-text{
+  text-align: end;
+  margin-right: 2%;
+}
+
+.warranty-text h2 {
+  font-size: 2.5em;
+}
+
+.warranty-text p {
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #2c3e50; /* Dark bluish-gray */
+  padding: 50px 20px;
+  color: white;
+  justify-items: center;
+}
+.logoInvert{
+  width: 30px;
+  height: 30px;
+}
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-details a {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #212121; /* Deep charcoal */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Map Section */
+.myMap {
+  background-color: #263238; /* Darker blue-gray */
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.myMap-content {
+  display: flex;
+  width: 90%;
+  max-width: 100%;
+  text-align: left;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.myMap h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.myMap-text {
+  margin-bottom: 20px;
+  color: #e0e0e0;
+    text-align-last: right;
+}
+
+/* Map Component Styles */
+.myMap iframe, .myMap .leaflet-container {
+  width: 33% !important;
+  height: 400px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Map Styles */
+@media (max-width: 768px) {
+  .myMap {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* End in place */
+
+  .warranty-content{
+    flex-direction: column;
+  }
+
+  .myMap iframe, .myMap .leaflet-container {
+    width: 100% !important;
+    height: 50vh !important;
+  }
+
+  .myMap-content {
+    width: 100%;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  .myMap h2 {
+    font-size: 1.5em;
+    justify-self: end;
+  }
+
+  .feature-cards{
+    display: flex;
+    flex-direction: column;
   }
 }
 
-@keyframes scaleUp {
-  from {
-    transform: scale(0.95); /* Start slightly smaller */
+@media (max-width: 480px) {
+  .myMap h2 {
+    font-size: 1.5em;
   }
-  to {
-    transform: scale(1); /* End at original size */
+
+  .myMap iframe, .myMap .leaflet-container {
+    height: 250px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .warranty-text h2 {
+    font-size: 2em;
+    justify-self: end;
+  }
+
+  .warranty-text p {
+    font-size: 1.1em;
+text-align: end;  }
+
+  /* Footer */
+  .footer {
+    font-size: 0.9em;
+    padding: 10px;
   }
 }
 
 /* Navbar Styles */
 .navbar {
   background-color: rgba(9, 27, 36, 0.9);
-  box-shadow: none; /* Removed shadow for a cleaner look */
   position: sticky;
   top: 0;
   z-index: 1000;
-  color: white;
+  box-shadow: none;
+  padding: 15px 20px;
 }
 
 .navbar-brand img {
-  width: 120px; /* Adjust logo size */
-  max-width: 100%; /* Ensure responsiveness */
-  height: auto; /* Maintain aspect ratio */
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
 }
 
 .nav-link {
-  margin-right: 10px; /* Adjusted margin */
-  font-size: 1.2em;
-  color: #ffffff !important; /* Dark text color */
+  font-size: 1.1em;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .nav-link:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-.collapse{
-  justify-content: end;
-}
-
-/* Header Content Adjustment */
-.header-content {
-  width: 100%;
-  flex-direction: column;
-  text-align: center;
-  animation: fadeIn 0.1s ease-out forwards; /* Apply fade-in animation */
-  background: linear-gradient(-45deg, #020405, #020506, #3f7d9e); /* Attractive gradient background */
-  color: #fff; /* White text for contrast */
-  border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
-}
-
-.frameimg {
-  width: 100%; /* Make image responsive */
-  max-width: 100%; /* Adjust image size for better fit */
-  height: auto; /* Maintain aspect ratio */
-  animation: scaleUp 0.5s ease forwards; /* Apply scale-up animation */
-  transition: transform 0.3s; /* Smooth scaling on hover */
-}
-
-.frameimg:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Improved Features Section */
-.features {
-  background: linear-gradient(90deg, #13799e 16%, #000d47); /* Background color */
-  color: white; /* White text */
-  padding: 40px 20px; /* Add padding */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items */
-}
-
-.feature-card {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  transition: transform 0.3s; /* Smooth hover effect */
-  padding: 20px; /* Padding inside the card */
-  margin: 10px; /* Margin for card spacing */
-  max-width: 90%; /* Limit card width for smaller screens */
-}
-
-.feature-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-}
-
-.feature-image {
-  width: 100%; /* Make the image responsive */
-  max-width: 100px; /* Set a max-width for images */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Warranty Section */
-.warranty-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 20px;
-  background-color: #091b24;
-  color: white;
-  flex-wrap: wrap;
-}
-
-.warranty-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.warranty-image {
-  flex: 1;
-  max-width: 45%;
-  margin-right: 20px;
-}
-
-.warranty-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: left; /* Show only the left half of the image */
-  border-radius: 0 30px 30px 0;
-}
-
-.warranty-text {
-  flex: 1;
-  max-width: 50%;
-  padding: 30px;
-}
-
-.warranty-text h2 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.warranty-text p {
-  font-size: 1.3em;
-  line-height: 1.6;
-}
-
-.warranty-text span {
-  color: #28a745; /* For highlighted brand text */
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .warranty-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .warranty-image {
-    margin-right: 0;
-    max-width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .warranty-text {
-    max-width: 100%;
-    padding: 20px;
-  }
-}
-
-/* Contact Section */
-.contact-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 20px;
-  background-color: #091b24;
-  color: white;
-  flex-wrap: wrap;
-}
-
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.contact-image {
-  flex: 1;
-  max-width: 40%;
-  margin-right: 20px;
-  border-radius: 15px;
-}
-
-.contact-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-.contact-text {
-  flex: 1;
-  max-width: 50%;
-  padding: 20px;
-}
-
-.contact-text h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.contact-text p {
-  font-size: 1.2em;
-  line-height: 1.6;
-}
-
-ul {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-ul li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-ul li a {
-  color: white;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 1.2em;
-}
-
-ul li a:hover {
   text-decoration: underline;
 }
 
-ul li svg {
-  margin-right: 10px;
+.navbar-collapse {
+  justify-content: flex-end;
 }
 
+/* Navbar Responsive Styles */
 @media (max-width: 768px) {
-  .contact-section {
+  .navbar-nav {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    width: 100%;
   }
 
-  .contact-image {
-    margin-right: 0;
-    max-width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .contact-text {
-    max-width: 100%;
-    padding: 20px;
+  .nav-item {
+    margin-bottom: 10px;
   }
 }
 
-/* Footer */
-.footer {
-  background-color: #222; /* Dark footer */
+
+/* About Us Section */
+.about-us {
+  padding: 60px 20px;
+  background-color: #2a323c; /* Dark teal */
   color: white;
-  padding: 20px 10px; /* Adjusted padding for mobile */
-  text-align: center; /* Center text in footer */
+  text-align: right;
 }
 
-/* List styles */
-ul {
-  padding-left: 0;
-  list-style-type: none; /* Remove default bullets */
+.about-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Wrap for responsiveness */
+}
+
+.about-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section h3 {
+  font-size: 1.8em;
+  color: #a1c6db;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column; /* Stack navbar items on smaller screens */
-    align-items: center; /* Center items */
-    margin-top: 10px; /* Add margin */
-  }
-
-  .feature-image {
-    max-width: 70%; /* Make images smaller on small screens */
-  }
-
-  .feature-card {
-    margin-bottom: 20px; /* Space between cards on small screens */
-    max-width: 90%; /* Ensure cards are responsive */
-  }
-
-  .warranty-image {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures it covers without stretching */
-    border-radius: 15px; /* Optional: Adjust for rounded corners */
-  }
-
-  .header-content {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-  }
-
-  .contact-container {
+  .about-content {
     flex-direction: column;
   }
-  
-  .contact-image,
-  .contact-text {
-    width: 100%;
-  }
-  
-  .contact-image img {
-    height: auto; /* Maintain image aspect ratio on smaller screens */
-  }
-}
 
-.no-whats {
-  margin-left: 2%;
-}
-
-@media (max-width: 576px) {
-  .navbar-brand img {
-    width: 100px; /* Smaller logo for extra small screens */
+  .about-us h2 {
+    font-size: 2em;
   }
 
-  .nav-link {
-    font-size: 1em; /* Smaller text for smaller screens */
-    margin: 10px 0; /* Stack links with margin */
+  .about-image {
+    order: -1; /* Move image above text */
+    margin-bottom: 20px;
   }
 }
 
-/* Typing effect text style */
-.typed-text {
-  font-size: 2em; /* Size of the typing text */
-  font-weight: bold; /* Bold text */
-  color: #ffdd57; /* Change this color to your preference */
-  margin-top: 20px; /* Space between the image and text */
+
+.features, .warranty, .contact, .myMap, .about-us {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.typed-cursor {
-  font-size: 2em; /* Cursor size */
-  color: #ffdd57; /* Cursor color */
+li{
+  list-style: none;
 }

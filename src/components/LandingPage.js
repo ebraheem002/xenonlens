@@ -5,22 +5,28 @@ import logo from './footer-logo.png';
 import lens from './xenon-cover-1.jpg';
 import second from './second.png';
 import third from './third.png';
-import fifth from './fifth.png';
 import forth from './forth.png';
+import fifth from './fifth.png';
 import sixth from './sixth.png';
+import logoInvert from './logoinvert.png'
+import aboutUsimage from './DALL·E 2024-11-13 11.20.07 - A high-quality, close-up image of a professional lab setting with precision optical lenses and glass equipment. Soft, focused lighting highlights a cl.webp'
 import warrant_image from './DALL·E-2024-11-10-01.56.jpg';
-import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaRegCheckCircle } from 'react-icons/fa'; // Importing React Icons
-import contactImage from './3f4b0f8b-8734-4e98-a4dd-08dbc6f4eb51.jpg'; // Add your image for the contact section
-import { ReactTyped } from 'react-typed'; // Updated import statement
+import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaRegCheckCircle } from 'react-icons/fa';
+import MapComponent from './MapComponent';
+
+const locations = [
+  { name: 'Point A', latitude: 51.505, longitude: -0.09 },
+  { name: 'Point B', latitude: 51.515, longitude: -0.1 },
+];
 
 const LandingPage = () => {
   return (
     <div>
       {/* Navbar Section */}
-      <div id="Home" className="section menu1">
-        <nav className="navbar navbar-expand-lg navbar-light">
+      <header id="Home" className="hero-section">
+        <nav className="navbar navbar-expand-lg navbar-transparent">
           <a className="navbar-brand" href="#Home">
-            <img className="myLogo" src={logo} alt="Brand Logo" />
+            <img className="logo" src={logo} alt="Brand Logo" />
           </a>
           <button
             className="navbar-toggler"
@@ -34,102 +40,132 @@ const LandingPage = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="navbar-nav">
-              <a className="nav-link" href="#contact">تواصل معنا</a>
-              <a className="nav-link" href="#grant">الضمان</a>
-              <a className="nav-link" href="#features">المواصفات</a>
-              <a className="nav-link" href="#Home">الرئيسية</a>
-            </div>
-          </div>
-        </nav>
-        {/* Header Content */}
-        <div className="header-content text-center">
-          <img className="frameimg" src={lens} alt="Lens" />
-        </div>
-      </div>
+            <ul className="navbar-nav ml-auto">
+              <li><a className="nav-link" href="#contact">تواصل معنا</a></li>
+              <li><a className="nav-link" href="#grant">الضمان</a></li>
+              <li><a className="nav-link" href="#map">اعثر علينا</a></li>
+              <li><a className="nav-link" href="#features">المواصفات</a></li>
+              <li><a className="nav-link" href="#about-us">من نحن</a></li>
+              <li><a className="nav-link" href="#Home">الرئيسية</a></li>
 
-      {/* Improved Features Section */}
-      <div id="features" className="section features">
-        <div className="container">
-          <h2 className="text-center text-white mb-5">ميزات العدسات</h2>
-          <div className="row">
-            {[ 
-              { title: 'مقاومة للغبار والماء', img: loo, desc: 'العدسة مخصصة لمقاومة الغبار والماء تعتمد على تقنية النانو وطلاءات مضادة للاتربة لتوفير حماية فائقة ووضوح عال.' },
-              { title: 'مقاومة للخدش', img: second, desc: 'العدسات مقاومة للخدش وتُصنع بتقنيات متطورة، حيث تُعالج بطلاءات خاصة تقوي سطح العدسة وتزيد من متانتها.' },
-              { title: 'تقنيات تسهيل التنظيف', img: third, desc: 'العدسات بتقنيات تسهيل التنظيف مزودة بطلاءات مضادة لأوساخ مما يجعلها مقاومة للتلطخ ويسهل تنظيفها بسرعة.' },
-              { title: 'تقنيات تقليل الانعكاسات', img: forth, desc: 'العدسة مزودة بتقنيات تساهم في تقليل الانعكاسات غير المرغوب فيها. هذه الطلاءات تعزز من وضوح الرؤية وتقلل من إجهاد العين.' },
-              { title: 'ختم مائي للتحقق من الجودة', img: fifth, desc: 'تتميز عدسة زينون بختم مائي يظهر عند تعرض العدسة للبخار مما يساعد على التحقق من أصالة العدسة وجودتها العالية.' },
-              { title: 'حماية من الضوء الأزرق', img: sixth, desc: 'العدسات مخصصة للحماية من الضوء الأزرق تعتمد على فلاتر خاصة مصممة لتقليل كمية الضوء الأزرق الضار المنبعث من الشاشات.' }
-            ].map((feature, index) => (
-              <div key={index} className="col-md-4 mb-4">
-                <div className="feature-card text-center p-4">
-                  <img className="feature-image" src={feature.img} alt={feature.title} />
-                  <h4 className="mt-3 text-white">{feature.title}</h4>
-                  <p className="text-light">{feature.desc}</p>
-                  <div className="check-icon">
-                    <FaRegCheckCircle color="#28a745" size={30} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Warranty Section */}
-      <div id="grant" className="section warranty-section">
-        <div className="warranty-container">
-          <div className="warranty-image">
-            <img src={warrant_image} alt="Warranty Image" />
-          </div>
-          <div className="warranty-text">
-            <h2>ضمان الاستبدال</h2>
-            <p>
-              استكمالا لتجربة عدساتنا المثالية تتعهد <span>زينون</span> بتقديم ضمان استبدال مجاني
-              على عدساتها في حال تعرضها للكسر غير المتعمد ويكون الضمان ساري لمدة شهر بعد تاريخ الشراء.
-            </p>
-            <p>
-              للاستفادة من الضمان: قم بالذهاب الى محل العوينات الذي قمت بشراء عدسات زينون منه
-              مع احظار العدسة المكسورة وبطاقة الضمان المرفقة مع العدسة.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Section */}
-      <div id="contact" className="section contact-section">
-        <div className="contact-container">
-          <div className="contact-image">
-            <img src={contactImage} alt="Contact Us" />
-          </div>
-          <div className="contact-text">
-            <h2>تواصل معنا</h2>
-            <p>إذا كنت بحاجة إلى المزيد من المعلومات أو الدعم، لا تتردد في التواصل معنا عبر الوسائل التالية:</p>
-
-            {/* Contact details */}
-            <ul className="list-unstyled">
-              <li>
-                <FaWhatsapp color="#25D366" size={30} />
-                <span> <a href="https://wa.me/9647716950796">واتساب: 9647716950796</a> </span>
-              </li>
-              <li>
-                <FaPhoneAlt color="#ff7f50" size={30} />
-                <span> <a href="tel:+9647716950796">هاتف: 9647716950796</a> </span>
-              </li>
-              <li>
-                <FaEnvelope color="#007bff" size={30} />
-                <span> <a href="mailto:sales@xenonlens.com">البريد الإلكتروني: sales@xenonlens.com</a> </span>
-              </li>
             </ul>
           </div>
+        </nav>
+        <div className="hero-content">
+          <div className="hero-overlay">
+            <h1>اكتشف العدسات المتطورة</h1>
+            <p>أحدث التقنيات لضمان وضوح الرؤية وحماية العين</p>
+            <a href="#features" className="cta-button">استكشف الآن</a>
+          </div>
+        </div>
+      </header>
+      {/* Features Section */}
+      <section id="features" className="features">
+        <h2 className="features-heading">ميزات العدسات</h2>
+        <div className="feature-cards">
+          {[
+            { title: 'مقاومة للغبار والماء', img: loo, desc: 'تقنية النانو لحماية العدسات من الغبار والماء.' },
+            { title: 'مقاومة للخدش', img: second, desc: 'تكنولوجيا لطلاءات تزيد من متانة العدسات.' },
+            { title: 'تقنيات تسهيل التنظيف', img: third, desc: 'طلاءات مضادة لأوساخ تضمن تنظيف سهل وسريع.' },
+            { title: 'تقنيات تقليل الانعكاسات', img: forth, desc: 'تحسين الرؤية من خلال تقليل الانعكاسات.' },
+            { title: 'ختم مائي للتحقق من الجودة', img: fifth, desc: 'ختم يظهر عند تعرض العدسة للبخار للتحقق من الأصالة.' },
+            { title: 'حماية من الضوء الأزرق', img: sixth, desc: 'حماية للعين من الأشعة الضارة المنبعثة من الشاشات.' }
+          ].map((feature, index) => (
+            <div key={index} className="feature-card">
+              <img className="feature-image" src={feature.img} alt={feature.title} />
+              <h4>{feature.title}</h4>
+              <p>{feature.desc}</p>
+              <FaRegCheckCircle className="check-icon" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div id="about-us" className="about-us">
+        <h2>من نحن</h2>
+        <div className="about-content">
+          <div className="about-text">
+            <div className="about-section">
+              <h3> : الشـركـة </h3>
+              <p>تتربع شركة زينون على قمة الابتكار والتميّز في عالم العدسات البصرية عالية الجودة. بدأت كمشروع صغير يتمحور حول الالتزام بأعلى معايير الجودة، واليوم أصبحت رمزًا للريادة والإبداع في قطاع البصريات.</p>
+            </div>
+            <div className="about-section">
+              <h3>:رؤيتــــنا </h3>
+              <p>في شركة زينون، نؤمن أن الرؤية هي القوة الدافعة التي تحرك العالم نحو التقدّم. نسعى إلى تقديم تجربة بصرية استثنائية تجمع بين الثقة والأناقة، لتمنح عملاءنا أفضل جودة وأروع مظهر.</p>
+            </div>
+            <div className="about-section">
+              <h3>: تاريخـــنا</h3>
+              <p>تأسست شركة زينون على يد فريق من الخبراء المتخصصين في صناعة العدسات البصرية. منذ البداية، كرّسنا جهودنا للابتكار والجودة، مما أكسبنا سمعة راسخة وثقة عملائنا في مجال العدسات عالية الجودة.</p>
+            </div>
+          </div>
+          <div className="about-image">
+            <img src={aboutUsimage} alt="Xenon Lenses Team" />
+          </div>
         </div>
       </div>
+      
+      {/* Warranty Section */}
+      <section id="grant" className="warranty">
+        <div className="warranty-content">
+          <div className="warranty-text">
+            <h2>ضمان الاستبدال</h2>
+            <p>استكمالا لتجربة استخدام عدساتنا تتعهد زينون بتقديم ضمان استبدال لعدساتها في حالة الكسر الغير متعمد</p>
+            <h2> :للاستفادة من الضمان في حالة الكسر </h2>
 
-      {/* Footer Section */}
-      <footer className="footer text-center">
-        <div className="container">
-          <p className="text-white">© 2024 Xenon Lens. جميع الحقوق محفوظة.</p>
+            <p> <ul>
+                <li>اولاً : قم باحضار العدسة المكسورة التي يظهر فيها ختم زينون الضبابي او جزء منها</li>
+                <br/>
+                <li>ثانياً : قم باحضار بطاقة الضمان التي يظهر فيها تاريخ الشراء </li>
+                <br/>
+                <li>ثالثاً : اذهب الى محل البصريات الذي قمت بشراء عدسات زينون منه </li>
+
+              </ul>
+              </p>
+          </div>
+          <div className="warranty-image">
+            <img src={warrant_image} alt="Warranty" />
+          </div>
         </div>
+      </section>
+
+      {/* Map Section */}
+      <section id="map" className="myMap">
+        <div className="myMap-content">
+          <div className="myMap-text">
+          <h2>: تتوفر عدساتنا في المتاجر التالية</h2>
+
+            <p><strong> بغداد البصريات</strong><br/>الموصل - الجانب الايسر - حي المصارف - قرب التقاطع</p>
+            <p><strong>الجامعة للبصريات </strong><br/>الموصل - الجانب الايسر - قرب نفق الجامعة</p>
+            <p><strong>مركز الحدباءالتخصصي</strong><br/>الموصل - الجانب الايسر - القادسية - قرب دورة حاملة الجرار</p>
+            <p><strong> الريان للبصريات</strong><br/>الموصل - الجانب الايسر - المصارف </p>
+            <p><strong> اليمامة للبصريات</strong><br/>الموصل - الجانب الايسر - المثنى - قرب دورةالمثنى </p>
+            <p><strong> ابن الهيثم للبصريات</strong><br/>الموصل - الجانب الايسر - الزهور - قرب دورة سيدتي الجميلة</p>
+            <p><strong> زيد للبصريات</strong><br/>الموصل - الجانب الايسر - المصارف - قرب اثاث استقبال</p>
+            
+
+
+
+          </div>
+          <MapComponent  locations={locations} />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact">
+        <h2>تواصل معنا</h2>
+        <div className="contact-details">
+          <ul>
+            <li><FaWhatsapp size={30} /> <a href="https://wa.me/9647716950796">9647716950796</a></li>
+            <li><FaWhatsapp size={30} /> <a href="https://wa.me/9647508199458">9647508199458</a></li>
+            <li><FaWhatsapp size={30} /> <a href="https://wa.me/9647518050661">9647518050661</a></li>
+            <li><FaEnvelope size={30} /> <a href="mailto:sales@xenonlens.com">sales@xenonlens.com</a></li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2024 Xenon Lens <img className='logoInvert' src={logoInvert} />. جميع الحقوق محفوظة.</p>
       </footer>
     </div>
   );
